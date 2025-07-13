@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  ScreenshotApp
-//
-//  Created by Sean Coffin on 7/13/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
