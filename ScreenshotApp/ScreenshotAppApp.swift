@@ -1,17 +1,20 @@
-//
-//  ScreenshotAppApp.swift
-//  ScreenshotApp
-//
-//  Created by Sean Coffin on 7/13/25.
-//
-
 import SwiftUI
 
 @main
 struct ScreenshotAppApp: App {
+    
+    @StateObject var vm = ScreencaptureViewModel()
+    
+@AppStorage("menuBarExtraIsInserted") var menuBarExtraIsInserted = true
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra("Screenshot", systemImage: "photo.badge.plus") {
+            MenuBarContentView(vm:vm)
+        }
+        .menuBarExtraStyle(.window)
+        
+        Settings {
+            SettingsView()
         }
     }
 }
